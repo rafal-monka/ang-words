@@ -1,0 +1,7 @@
+<div class="root" ngClass="tag{{word.tags}}" (click)="goToWord()">
+  <span class="phrase"><b>{{word.phrase}}</b></span>
+  <span *ngIf="word.sentence"><br/><b>{{word.sentence}}</b></span>
+  <br/><span class="translation">{{translationShort}}</span>
+</div>
+
+<!-- <a [routerLink]="['/word', word.id]">{{word.phrase}}</a> -->

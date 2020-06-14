@@ -1,0 +1,28 @@
+<div *ngIf="wordObj">
+    <div ngClass="tag{{wordObj.tags}}">
+      <back-button></back-button>
+      &nbsp;<button class="tagA" (click)="tagWord('A')">A</button>
+      &nbsp;<button class="tagB" (click)="tagWord('B')">B</button>
+      &nbsp;<button class="tagC" (click)="tagWord('C')">C</button>
+      &nbsp;<button class="tagD" (click)="tagWord('D')">D</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="danger" (click)="deleteWord()">Delete</button>
+    </div>
+
+    <div>
+      <h1 class="phrase">{{wordObj.phrase}}</h1>
+      <h3>{{wordObj.hws}}</h3>
+      <p>{{wordObj.speechpart}}</p>
+      <br/>
+      <p><span class="translation">{{wordObj.translation}}</span></p>
+      <br/>
+      <h2><span class="sentence"><b>{{wordObj.sentence}}</b></span></h2>
+      <br/>
+      <p><span class="examples" [innerHTML]="examplesHTML"></span></p>
+
+      <br/>
+      <br/>
+      <p>#{{wordObj._id}}</p>
+      <p>tags: {{wordObj.tags}}</p>
+      <p>counter: {{wordObj.counter}}</p>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div *ngIf="pageObj">
+
+  <div>
+    <span *ngIf="currentPage>1">
+      <button  (click)="firstPage()">|&lt;</button>
+      &nbsp;
+      <button  (click)="prevPage()">&lt;</button>
+      &nbsp;
+    </span>
+
+    <!-- <span *ngFor="let p of pageCountArr; index as i">
+      &nbsp;<button (click)="goPage(i+1)" [disabled]="currentPage==(i+1)">{{i+1}}</button>
+    </span> -->
+
+    <span *ngIf="pageObj">
+      <select value={{currentPage}} (change)='onOptionsSelected($event.target.value)'>
+        <option *ngFor="let p of pageCountArr; index as i" [value]="(1*i+1)">{{i+1}}</option>
+      </select>
+    </span>
+
+    <span *ngIf="currentPage<pageObj.meta.pageCount">
+      &nbsp;
+      <button (click)="nextPage()">&gt;</button>
+      &nbsp;
+      <button (click)="lastPage()">&gt;|</button>
+    </span>
+
+  </div>
+
+  <br/>
+
+  <div class="page_words" *ngFor="let word of pageObj.rows">
+      <word-in-page [word]="word"></word-in-page>
+  </div>
+
+  <small>
+    <p *ngIf="contents">Contents: "{{contents}}"</p>
+  </small>
+</div>
+
+<!-- <b><a [routerLink]="['/word', word.id]">{{word.phrase}}</a></b> - {{word.translation}}  -->
+
+<br/>
+<span *ngIf="pageObj"><small>{{pageObj.meta | json}}</small></span>

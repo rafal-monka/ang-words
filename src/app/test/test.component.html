@@ -1,0 +1,5 @@
+<h3>HTTP words</h3>
+<input #id/>
+<button (click)="request(id.value)">Download</button>
+<button (click)="clear()">clear</button>
+<p *ngIf="contents">Contents: "{{contents}}"</p>

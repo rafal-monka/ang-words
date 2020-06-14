@@ -1,0 +1,21 @@
+.phrase {
+  color: blue;
+}
+
+.translation {
+  color: green;
+}
+
+.sentence {
+  color: black;
+}
+
+.examples {
+  color: maroon
+}
+
+.danger {
+  color: white;
+  background-color: red;
+}
+
